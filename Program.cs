@@ -28,28 +28,6 @@ namespace LinqToObjectJoinEntity
 
             using (var db = new EntityContext())
             {
-                #region Linq to Object join Linq to Entity(Resolve)
-
-                var entityIds = db.Entitys.Select(o => o.EntityId);
-
-                var objectNames = (from myObject in myObjects
-                                   join entityId in entityIds
-                                   on myObject.Identity equals entityId
-                                   select myObject.Name).ToList();
-
-                #endregion
-
-                #region Linq to Entity Join Linq to Object(Resolve)
-
-                //var identities = myObjects.Select(o => o.Identity);
-
-                //var entitytNames = (from entity in db.Entitys
-                //                    join identity in identities
-                //                    on entity.EntityId equals identity
-                //                    select entity.Name).ToList();
-
-                #endregion
-
                 #region Reproduce Linq Problem
 
                 #region Reproduce Linq to Object Join Linq to Entity
@@ -69,6 +47,17 @@ namespace LinqToObjectJoinEntity
                 //                  select entity.Name).ToList();
 
                 #endregion
+
+                #endregion
+                
+                #region Linq to Entity Join Linq to Object(Resolve)
+
+                //var identities = myObjects.Select(o => o.Identity);
+
+                //var entitytNames = (from entity in db.Entitys
+                //                    join identity in identities
+                //                    on entity.EntityId equals identity
+                //                    select entity.Name).ToList();
 
                 #endregion
 
