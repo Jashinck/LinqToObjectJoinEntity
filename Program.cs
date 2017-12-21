@@ -32,10 +32,10 @@ namespace LinqToObjectJoinEntity
 
                 #region Reproduce Linq to Object Join Linq to Entity
 
-                //var objectNames = (from myObject in myObjects
-                //                   join entity in db.Entitys
-                //                   on myObject.Identity equals entity.EntityId
-                //                   select myObject.Name).ToList();
+                var objectNames = (from myObject in myObjects
+                                   join entity in db.Entitys
+                                   on myObject.Identity equals entity.EntityId
+                                   select myObject.Name).ToList();
 
                 #endregion
 
